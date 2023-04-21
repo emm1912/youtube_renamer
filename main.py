@@ -3,10 +3,10 @@ import requests
 from bs4 import BeautifulSoup
 import re
 pattern = re.compile(r'\bcontent=.(.*).\s')
-os.chdir("/home/jerry/PycharmProjects/Beto/RenombrarYouTube/")                                                          # HERE WE MOVE THE DIR WHERE videso.txt IS
+os.chdir("<ADD PATH HERE>")                                                          # HERE WE MOVE THE DIR WHERE videso.txt IS
 valuesDic = {}
 if __name__ == '__main__':
-    with open("videos.txt", "r") as f:                                                                                  # HERE THE NAME YOU HAVE TO ENTER THE NAME OF THE TXT ARCHIVE THAT yt-dlp GENERATED
+    with open("<INSERT NAME HERE>", "r") as f:                                                                                  # HERE THE NAME YOU HAVE TO ENTER THE NAME OF THE TXT ARCHIVE THAT yt-dlp GENERATED
         for enum, i in enumerate(f, start=1):
 
             t = list(map(str, i.split()))
@@ -21,7 +21,7 @@ if __name__ == '__main__':
             print(f"{enum}: {valuesDic[t[1]]}")
 
 
-    os.chdir("/home/jerry/Documents/Youtube/Django rest framework Code Environment/UCh9biyYSlMzM9T3Xtxmglww/PLmDLs7JbXWNjr5vyJhfGu69sowgIUl8z5/") #WE CHANGE TO THE DIRECTORY WHERE THE VIDEOS TO RENEAME ARE
+    os.chdir("<ADD PATH HERE>") #WE CHANGE TO THE DIRECTORY WHERE THE VIDEOS TO RENEAME ARE
     for i in os.listdir():
         file_nameOld, file_ext = os.path.splitext(i)
         new_name = valuesDic[file_nameOld]+file_ext
